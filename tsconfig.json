@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "lib": ["DOM", "ES2015", "ES2017.Object", "ES2018.Intl"],
+    "sourceMap": true,
+    "jsx": "react-jsx",
+    "declaration": true,
+    "noEmit": true,
+    "importHelpers": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "packages/*/node_modules/@types",
+      "./types"
+    ]
+  }
+}
