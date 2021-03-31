@@ -2,15 +2,15 @@ import * as path from "path";
 import webpack, { Configuration } from "webpack";
 import merge from "webpack-merge";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import { Configuration as WebpackDevServerConfig } from "webpack-dev-server";
 import baseConfig from "../../webpack.config";
+import { Configuration as WebpackDevServerConfig } from "webpack-dev-server";
 
 const {
   container: { ModuleFederationPlugin },
 } = webpack;
 
 interface Config extends Configuration {
-  readonly devServer?: WebpackDevServerConfig;
+  readonly devServer: WebpackDevServerConfig;
 }
 
 const config: Config = {
@@ -27,15 +27,15 @@ const config: Config = {
     ],
   },
   devServer: {
-    port: 3000,
+    port: 3001,
     contentBase: path.join(__dirname, "./dist"),
-    historyApiFallback: true,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "app",
-      remotes: {
-        movies: "movies@http://localhost:3001/remoteEntry.js",
+      name: "movies",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./Movies": "./src/App",
       },
       shared: { react: { singleton: true }, "react-dom": { singleton: true } },
     }),

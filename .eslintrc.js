@@ -6,7 +6,6 @@ module.exports = {
   extends: [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "airbnb",
     "prettier",
     "plugin:prettier/recommended",
   ],
@@ -19,5 +18,8 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "react-hooks", "@typescript-eslint"],
-  rules: {},
+  rules: {
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+  },
 };

@@ -26,7 +26,7 @@ const baseConfig: Configuration = {
             require.resolve("@babel/preset-typescript"),
             [require.resolve("@babel/preset-react"), { runtime: "automatic" }],
           ],
-          plugins: [require.resolve("react-refresh/babel")],
+          // plugins: [require.resolve("react-refresh/babel")],
         },
       },
       {
@@ -42,8 +42,8 @@ const baseConfig: Configuration = {
   plugins: [
     // @ts-ignore
     new MiniCssExtractPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new ReactRefreshWebpackPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
+    // new ReactRefreshWebpackPlugin(),
   ],
 };
 
