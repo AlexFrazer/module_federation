@@ -27,6 +27,7 @@ const baseConfig: Configuration = {
             require.resolve("@babel/preset-typescript"),
             [require.resolve("@babel/preset-react"), { runtime: "automatic" }],
           ],
+          plugins: [require.resolve("babel-plugin-dev-expression")],
           // plugins: [require.resolve("react-refresh/babel")],
         },
       },

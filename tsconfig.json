@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "commonjs",
+    "rootDir": "./",
     "lib": ["DOM", "ES2015", "ES2017.Object", "ES2018.Intl"],
     "sourceMap": true,
     "jsx": "react-jsx",
@@ -15,7 +16,6 @@
     "forceConsistentCasingInFileNames": true,
     "typeRoots": [
       "node_modules/@types",
-      "packages/*/node_modules/@types",
       "./types"
     ]
   },

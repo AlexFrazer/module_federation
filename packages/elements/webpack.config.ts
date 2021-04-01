@@ -27,16 +27,16 @@ const config: Config = {
     ],
   },
   devServer: {
-    port: 3000,
+    port: 3002,
     contentBase: path.join(__dirname, "./dist"),
     historyApiFallback: true,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "app",
-      remotes: {
-        movies: "movies@http://localhost:3001/remoteEntry.js",
-        elements: "elements@http://localhost:3002/remoteEntry.js",
+      name: "elements",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./Button": "./src/Button",
       },
       shared: { react: { singleton: true }, "react-dom": { singleton: true } },
     }),
