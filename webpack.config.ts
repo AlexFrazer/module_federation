@@ -7,6 +7,7 @@ import "webpack-dev-server";
 const isDevelopment = process.env.NODE_ENV === "development";
 
 const baseConfig: Configuration = {
+  mode: isDevelopment ? "development" : "production",
   devtool: "inline-source-map",
   output: {
     publicPath: "auto",
